@@ -4,16 +4,17 @@
 # Assumes files are *.txt
 
 import glob
+import subprocess
 
 # Set directory
-dir = '/Users/James/Dropbox/Logging/'
+dir = '/Users/James/GitHub/DayOneLogging/testfiles/'
 
-# Create text chunks
+# Create text chunks and append to final.txt
 dlist = glob.glob(dir + '*.txt')
-print dlist
 for i in dlist:
-    print '####', i[len(dir):-4:]
+    h = '#### ' + i[len(dir):-4:]
     t = open(i, 'r')
-    print t.read()
-    print
+    r = open(dir + 'final.txt', 'a')
+    r.write(str(h) + '\n')
+    r.write(t.read() + '\n\n')
 
