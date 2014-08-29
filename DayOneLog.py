@@ -2,8 +2,11 @@
 # One day.
 #
 # Assumes files are *.txt
+#
+# This will delete all *.txt files in the specified directory, use with care.
 
 import glob
+import os
 import subprocess
 
 # Set directory
@@ -17,4 +20,10 @@ for i in dlist:
     r = open(dir + 'final.txt', 'a')
     r.write(str(h) + '\n')
     r.write(t.read() + '\n\n')
+
+# Remove files
+for i in dlist:
+    os.remove(i)
+
+
 
