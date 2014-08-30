@@ -1,13 +1,13 @@
 # Grabs all the files in a directory, consolidates them, chucks them in Day One.
 # One day.
 #
-# Assumes files are *.txt
+# Assumes files are *.txt and requires DayOne CLI be installed.
 #
 # This will delete all *.txt files in the specified directory, use with care.
+# NB Does not, for some reason, include the last file in the generated entry
 
 import glob
 import os
-import subprocess
 
 # Set directory
 dir = '/Users/James/GitHub/DayOneLogging/testfiles/'
@@ -20,10 +20,13 @@ for i in dlist:
     r = open(dir + 'final.txt', 'a')
     r.write(str(h) + '\n')
     r.write(t.read() + '\n\n')
+#    os.remove(i)
 
-# Remove files
-for i in dlist:
-    os.remove(i)
+# Run DayOne CLI
+os.system('/usr/local/bin/dayone new <' + dir + 'final.txt')
+
+# Remove created file
+os.remove(dir + 'final.txt')
 
 
 
