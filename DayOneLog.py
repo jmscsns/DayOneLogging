@@ -23,7 +23,7 @@ for i in dlist:
 #    os.remove(i)
 
 # Run DayOne CLI
-os.system('/usr/local/bin/dayone new <' + dir + 'final.txt')
+os.system('/usr/local/bin/dayone new <' + '"' + dir + '"' + 'final.txt')
 
 # Remove created file
 os.remove(dir + 'final.txt')
