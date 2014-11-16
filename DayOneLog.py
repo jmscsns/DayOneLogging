@@ -12,6 +12,12 @@ import os
 # Set directory
 dir = '/Users/James/GitHub/DayOneLogging/testfiles/'
 
+# Create dummy text file
+# This is a very inelegant way of getting around the failure to append the last file in the for loop
+
+dummy = open(dir + 'zzzzz.txt', 'a')
+dummy.write('There must be a better way than this')
+
 # Create text chunks and append to final.txt
 dlist = glob.glob(dir + '*.txt')
 for i in dlist:
