@@ -1,0 +1,4 @@
+* Some bullet-points and *markdown* **formatting**
+* Like [links](http://www.github.com)
+* And ~~strikethrough~~
+* And a underscore spaced name

@@ -21,7 +21,7 @@ dummy.write('There must be a better way than this')
 # Create text chunks and append to final.txt
 dlist = glob.glob(dir + '*.txt')
 for i in dlist:
-    h = '#### ' + i[len(dir):-4:]
+    h = '#### ' + i[len(dir):-4:].replace("_", " ").title()
     t = open(i, 'r')
     r = open(dir + 'final.txt', 'a')
     r.write(str(h) + '\n')
